@@ -50,7 +50,7 @@ function startBackdrop() {
 }
 
 function sizeBackdrop() {
-  horizontalAlignment = parseFloat(getComputedStyle(video).objectPosition) / 100;
+  horizontalAlignment = Number(getComputedStyle(intro).getPropertyValue('--video-alignment'));
   ambience.height = Math.max(1, Math.round(ambience.width * intro.clientHeight / intro.clientWidth));
   paintBackdrop();
 }
