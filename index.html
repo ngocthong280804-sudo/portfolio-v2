@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio của Ngọc Thông về Marketing, nội dung số, E-commerce và sản xuất sáng tạo.">
+  <meta name="description" content="Video Editor, Content Creator và Social AI. Khám phá video ngắn, nội dung thương hiệu và motion design của Ngọc Thông.">
   <meta name="theme-color" content="#090909">
   <title>Ngọc Thông</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <script defer src="intro.js?v=2"></script>
 </head>
 <body>
@@ -36,81 +36,107 @@
       </figure>
     </section>
 
-    <header class="masthead wrap">
-      <p class="masthead__focus">Marketing &amp; E-commerce</p>
-      <nav aria-label="Điều hướng">
-        <a href="#du-an">Dự án</a>
-        <a href="#gioi-thieu">Giới thiệu</a>
-        <a href="#lien-he">Liên hệ</a>
-      </nav>
+    <header class="sitebar">
+      <div class="wrap sitebar__inner">
+        <a class="wordmark" href="#top" aria-label="Ngọc Thông, về đầu trang">Ngọc <i>Thông.</i></a>
+        <nav aria-label="Điều hướng chính">
+          <a href="#du-an">Dự án</a>
+          <a href="#gioi-thieu">Giới thiệu</a>
+          <a href="#lien-he">Liên hệ</a>
+        </nav>
+      </div>
     </header>
 
-    <section class="work" id="du-an" aria-labelledby="work-heading">
+    <section class="work" id="du-an" aria-labelledby="work-title">
       <div class="wrap">
-        <div class="section-head">
-          <h2 id="work-heading">Dự án chọn lọc</h2>
+        <div class="work-head">
+          <h2 class="display" id="work-title">Dự án <em>chọn lọc.</em></h2>
+          <p class="disciplines" lang="en"><span>Video Editor</span> <span>Content Creator</span> <span>Social AI</span></p>
         </div>
-        <div class="work__grid">
-          <article class="case case--lead">
-            <div class="case__image"><img src="assets/work/social.webp" width="1110" height="595" loading="lazy" alt="Các món ăn trong chiến dịch nội dung Cơm Niêu Thiên Lý"></div>
-            <div class="case__body">
-              <p class="eyebrow">Cơm Niêu Thiên Lý · Social Media</p>
-              <h3>Video khai trương</h3>
-              <p class="case__metric"><strong>274K</strong> lượt xem cho video mình trực tiếp làm host</p>
-              <p>Tham gia lên ý tưởng, hỗ trợ quay và dẫn video giới thiệu chi nhánh mới tại Quận 1.</p>
-              <a class="text-link" href="https://www.facebook.com/reel/1311036094475687" target="_blank" rel="noopener noreferrer">Xem video trên Facebook</a>
+
+        <article class="feature" aria-labelledby="fashion-title">
+          <a class="feature__link" href="du-an/fashion.html" aria-labelledby="fashion-title fashion-link">
+            <div class="feature__copy">
+              <p class="kicker">Dự án cá nhân · TikTok</p>
+              <h3 id="fashion-title" lang="en">AI <em>Fashion</em></h3>
+              <p class="feature__summary">Thử ba cách lên hình cho thời trang nam, từ bước đi trên phố đến dáng đứng bên biển. Mình tạo hình bằng AI và dựng nhịp bằng CapCut.</p>
+              <span class="action" id="fashion-link">Xem dự án</span>
             </div>
-          </article>
-          <article class="case">
-            <div class="case__image"><img src="assets/work/commerce.webp" width="870" height="665" loading="lazy" alt="Mặt tiền một chi nhánh Cơm Niêu Thiên Lý"></div>
-            <div class="case__body">
-              <p class="eyebrow">Cơm Niêu Thiên Lý · E-commerce</p>
-              <h3>Vận hành đa nền tảng</h3>
-              <p class="case__metric"><strong>34</strong> chi nhánh trong phạm vi vận hành</p>
-              <p>Chuẩn hóa SOP, checklist và tổng hợp số liệu đơn hàng, GMV, Gross Margin trên GrabFood, ShopeeFood và XanhSM.</p>
+            <div class="feature__stills" aria-hidden="true">
+              <img src="assets/work/fashion-shore.webp" alt="" width="576" height="1024" loading="lazy">
+              <img src="assets/work/fashion.webp" alt="" width="576" height="1024" loading="lazy">
             </div>
-          </article>
-          <article class="case">
-            <div class="case__image case__image--pair">
-              <img src="assets/work/fashion.webp" width="576" height="1024" loading="lazy" alt="Khung hình video thời trang dùng AI">
-              <img src="assets/work/motion.webp" width="576" height="1024" loading="lazy" alt="Khung hình video motion graphics">
-            </div>
-            <div class="case__body">
-              <p class="eyebrow">Dự án cá nhân · Creative Technology</p>
-              <h3>AI Content Lab</h3>
-              <p>Thử nghiệm trên hai kênh TikTok, từ video thời trang ứng dụng AI đến motion graphics làm bằng React và Remotion.</p>
-              <div class="case__links">
-                <a class="text-link" href="https://www.tiktok.com/@odaycododepcungleo" target="_blank" rel="noopener noreferrer">Kênh thời trang</a>
-                <a class="text-link" href="https://www.tiktok.com/@leotnt" target="_blank" rel="noopener noreferrer">Kênh motion</a>
+          </a>
+        </article>
+
+        <div class="projects">
+          <article class="project-card">
+            <a href="du-an/thien-ly.html" aria-labelledby="thienly-title">
+              <div class="cover cover--food">
+                <img src="assets/work/social.webp" width="1110" height="597" loading="lazy" alt="Mâm cơm và đôi đũa gắp thức ăn tại Cơm Niêu Thiên Lý"><span class="cover-link" aria-hidden="true">Xem dự án</span>
               </div>
-            </div>
+              <div class="card-credit"><span>Facebook Reels</span><span>Ý tưởng · Host</span></div>
+              <h3 id="thienly-title">Cơm Niêu <em>Thiên Lý</em></h3>
+              <p>Mình góp ý tưởng và làm host cho Reel giới thiệu chi nhánh Quận 1. Video ghi nhận 274 nghìn lượt xem.</p>
+            </a>
+          </article>
+          <article class="project-card">
+            <a href="du-an/motion.html" aria-labelledby="motion-title">
+              <div class="cover cover--motion" aria-hidden="true"><span class="cover-link">Xem dự án</span>
+                <div class="motion-stack">
+                  <img src="assets/work/motion-meta.webp" alt="" width="576" height="1024" loading="lazy">
+                  <img src="assets/work/motion.webp" alt="" width="576" height="1024" loading="lazy">
+                  <img src="assets/work/motion-canva.webp" alt="" width="576" height="1024" loading="lazy">
+                </div>
+              </div>
+              <div class="card-credit"><span>React &amp; Remotion</span><span>Motion design</span></div>
+              <h3 id="motion-title" lang="en">Logo <em>in Motion</em></h3>
+              <p>Sáu bài tập chuyển động logo. Mình dùng code để chỉnh từng nhịp tăng tốc, dừng và chuyển cảnh.</p>
+            </a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="about wrap" id="gioi-thieu" aria-labelledby="about-heading">
-      <div>
-        <p class="eyebrow">Giới thiệu</p>
-        <h2 id="about-heading">Từ ý tưởng<br>đến triển khai.</h2>
-      </div>
-      <div class="about__details">
-        <p>Mình làm việc ở giao điểm giữa Marketing và E-commerce. Công việc của mình trải từ lên nội dung, viết kịch bản và làm host đến điều phối creator, vận hành nền tảng và đọc dữ liệu hiệu quả.</p>
-        <p>Mình cũng dùng AI và Remotion để thử những cách sản xuất nội dung mới trên các dự án cá nhân.</p>
+    <section class="profile" id="gioi-thieu" aria-labelledby="about-title">
+      <div class="wrap profile__inner">
+        <figure class="profile__figure">
+          <img src="assets/work/thong-portrait.webp" alt="Ngọc Thông trong chiếc áo khoác xám, đứng ở hành lang ngoài trời" width="900" height="1200" loading="lazy">
+        </figure>
+        <div class="profile__body">
+          <p class="kicker">Giới thiệu</p>
+          <h2 class="display" id="about-title">Mình là <em>Thông.</em></h2>
+          <p class="profile__intro">Mình viết kịch bản, đứng trước máy quay và ngồi bàn dựng. Với các kênh cá nhân, mình còn dùng AI để dựng bối cảnh và thử cách kể cùng một ý tưởng trong vài giây.</p>
+          <dl class="experience">
+            <div>
+              <dt>Cơm Niêu Thiên Lý</dt>
+              <dd>Làm nội dung social, phối hợp với hơn 50 KOC/KOL và tham gia vận hành các ứng dụng giao đồ ăn cho 34 chi nhánh.</dd>
+            </div>
+            <div>
+              <dt>TikTok UniCamp × Creative Point</dt>
+              <dd>Lên nội dung, dẫn, dựng video và livestream. Cùng nhóm xây kênh từ 0 lên hơn 1.000 người theo dõi trong một tuần.</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="contact" id="lien-he">
-    <div class="wrap contact__inner">
-      <div>
-        <p class="eyebrow">Liên hệ</p>
-        <h2>Cùng làm dự án.</h2>
+    <div class="wrap">
+      <div class="contact__main">
+        <div>
+          <p class="kicker">Liên hệ</p>
+          <h2 class="display">Cùng làm <em>dự án.</em></h2>
+        </div>
+        <a class="contact__email" href="mailto:ngocthong280804@gmail.com">ngocthong280804@gmail.com</a>
       </div>
-      <div class="contact__links">
-        <a class="text-link" href="mailto:ngocthong280804@gmail.com">Gửi email</a>
-        <a class="text-link" href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="text-link" href="#top">Về đầu trang</a>
+      <div class="contact__foot">
+        <span class="wordmark">Ngọc <i>Thông.</i></span>
+        <nav aria-label="Trang cá nhân và điều hướng">
+          <a href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="#top">Về đầu trang</a>
+        </nav>
       </div>
     </div>
   </footer>
