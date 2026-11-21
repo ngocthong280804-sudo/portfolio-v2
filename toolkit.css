@@ -1,113 +1,81 @@
 .craft {
-  --craft-muted: #b9b9b2;
-  --craft-line: #464742;
-  --craft-accent: #d6fa49;
-  background: #1a1b18;
-  color: #f4f3ed;
-  scroll-margin-top: 5rem;
+  --craft-line: #41423d;
+  --craft-muted: #c3c4bd;
+  background: #181917;
+  color: #f4f4ef;
+  scroll-margin-top: 4rem;
 }
 .craft__spread {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.13fr) minmax(0, .87fr);
   align-items: start;
-  gap: clamp(2.5rem, 6.5vw, 8rem);
-  padding-block: clamp(3.75rem, 8vw, 7.5rem);
+  gap: clamp(2.4rem, 7vw, 7.5rem);
+  padding-block: clamp(3.5rem, 7vw, 7.5rem);
 }
 .craft .craft__title {
+  margin: 0 0 clamp(1.25rem, 2.5vw, 2.2rem);
   color: inherit;
-  margin: 0 0 clamp(1.45rem, 2.5vw, 2.5rem);
-  font-family: var(--cut-display, 'Barlow Condensed', 'Be Vietnam Pro', sans-serif);
-  font-size: clamp(3.15rem, 6.1vw, 6.4rem);
-  font-weight: 800;
-  line-height: 1.07;
+  font: 800 clamp(3.05rem, 5.6vw, 6rem)/1.13 var(--cut-display, 'Barlow Condensed', sans-serif);
+  letter-spacing: -.018em;
+}
+.craft ul { list-style: none; padding: 0; margin: 0; }
+.craft summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+.craft summary::-webkit-details-marker { display: none; }
+.craft summary::after {
+  content: '';
+  width: .78rem;
+  height: .78rem;
+  flex: 0 0 auto;
+  background: linear-gradient(currentColor,currentColor) center / 100% 1.5px no-repeat,
+    linear-gradient(currentColor,currentColor) center / 1.5px 100% no-repeat;
+}
+.craft details[open] > summary::after { background-size: 100% 1.5px, 0 0; }
+.craft summary:focus-visible, .craft a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.craft__roles { border-top: 1px solid var(--craft-line); }
+.craft__roles li { border-bottom: 1px solid var(--craft-line); }
+.craft__roles summary {
+  padding: .77rem .35rem .77rem 0;
+  min-height: 3.6rem;
+  font: 500 clamp(1.08rem, 1.62vw, 1.6rem)/1.38 var(--sans, 'Be Vietnam Pro', sans-serif);
   letter-spacing: -.025em;
 }
-.craft__title span { color: inherit; }
-.craft ul { list-style: none; padding: 0; margin: 0; }
-.craft__roles > li {
-  border-top: 1px solid var(--craft-line);
-  padding: 1rem 0 1.15rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  column-gap: 1.1rem;
-  row-gap: .45rem;
-  align-items: baseline;
-}
-.craft__roles h3 {
-  color: inherit;
-  margin: 0;
-  font-family: var(--sans, 'Be Vietnam Pro', sans-serif);
-  font-size: clamp(1.27rem, 2.1vw, 2rem);
-  font-weight: 500;
-  line-height: 1.24;
-  letter-spacing: -.045em;
-}
-.craft__roles p {
-  grid-column: 1/-1;
-  grid-row: 2;
-  margin: 0;
-  max-width: 46ch;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--craft-muted);
-}
-.craft__roles a {
-  grid-column: 2;
-  grid-row: 1;
-  color: var(--craft-accent);
-  font-size: .85rem;
-  font-weight: 500;
-  padding-block: .35em;
-  text-decoration: underline;
-  text-decoration-color: #879c44;
-  text-underline-offset: .28em;
-}
-.craft__roles a:hover { text-decoration-color: currentColor; }
-.craft__tools { scroll-margin-top: 5rem; }
-.craft__rack { border-top: 1px solid var(--craft-line); }
-.craft__group { padding-block: .92rem 1.15rem; }
-.craft__group + .craft__group { border-top: 1px solid var(--craft-line); }
-.craft__group h3 {
-  color: var(--craft-muted);
-  font-family: var(--sans, 'Be Vietnam Pro', sans-serif);
-  font-size: .9rem;
-  font-weight: 500;
-  margin: 0 0 .65rem;
-  line-height: 1.4;
-}
-.craft__group ul {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: clamp(.65rem, 1.3vw, 1.4rem);
-  row-gap: .65rem;
-}
+.craft__roles summary:hover, .craft__detail a:hover { color: white; text-decoration: underline; text-underline-offset: .25em; }
+.craft__detail { padding: .04rem 1.7rem 1.1rem 0; }
+.craft__detail p { margin: 0; max-width: 46ch; color: var(--craft-muted); font-size: .96rem; line-height: 1.65; }
+.craft__detail a { display: inline-block; margin-top: .5rem; font-size: .87rem; color: #f2f2eb; text-decoration: underline; text-underline-offset: .27em; }
+.craft__tools { padding: clamp(1.3rem, 2.8vw, 2.9rem); background: #eeeee8; color: #191a17; scroll-margin-top: 4.5rem; }
+.craft__tools .craft__title { margin-bottom: 1.15rem; }
+.craft__group, .craft__more { border-top: 1px solid #bebfb8; }
+.craft__group { padding-block: .86rem 1.1rem; }
+.craft__group h3 { margin: 0 0 .6rem; font: 600 .86rem/1.5 var(--sans, 'Be Vietnam Pro', sans-serif); color: #555650; }
+.craft__group ul { display: flex; flex-wrap: wrap; gap: .4rem .55rem; }
 .craft__group li {
   display: inline-flex;
   align-items: center;
-  gap: .44rem;
-  font: 500 .87rem/1.35 var(--sans, 'Be Vietnam Pro', sans-serif);
+  gap: .42rem;
+  padding: .32rem .58rem;
+  border: 1px solid #c9cac2;
+  border-radius: .3rem;
+  background: #f8f8f3;
+  font: 500 .88rem/1.45 var(--sans, 'Be Vietnam Pro', sans-serif);
 }
-.craft__icon {
-  width: 2.3rem;
-  height: 2.3rem;
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  border-radius: .62rem;
-  background: #f0efe9;
+.craft__group img { width: 1.05rem; height: 1.05rem; object-fit: contain; }
+.craft__more summary { min-height: 3rem; padding-block: .65rem; font-size: .92rem; font-weight: 600; }
+.craft__more summary:hover { text-decoration: underline; text-underline-offset: .25em; }
+.craft__extra .craft__group { padding-block: .65rem .85rem; }
+@media (max-width: 49rem) {
+  .craft__spread { grid-template-columns: 1fr; gap: 2.3rem; }
+  .craft__tools { padding: clamp(1.2rem, 4vw, 2rem); }
 }
-.craft .craft__icon img { display: block; width: 1.5rem; height: 1.5rem; object-fit: contain; }
-@media (max-width: 65rem) and (min-width: 49rem) {
-  .craft__roles > li { display: block; }
-  .craft__roles p { margin-top: .4rem; }
-  .craft__roles a { display: inline-block; margin-top: .35rem; }
-}
-@media (max-width: 48.99rem) {
-  .craft__spread { grid-template-columns: 1fr; gap: 2.7rem; }
-}
-@media (max-width: 36rem) {
-  .craft__roles > li { display: block; }
-  .craft__roles p { margin-top: .45rem; }
-  .craft__roles a { display: inline-flex; align-items: center; min-height: 2.75rem; }
-  .craft__group ul { column-gap: 1.15rem; }
+@media (max-width: 30rem) {
+  .craft__roles summary { min-height: 3.4rem; }
+  .craft__group ul { gap: .4rem; }
+  .craft__group li { padding: .3rem .43rem; }
 }

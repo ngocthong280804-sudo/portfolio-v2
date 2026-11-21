@@ -15,13 +15,13 @@
 .ddv-hero .case-meta { color: #d7d2cd; }
 .ddv-hero h1 {
   margin: .25em 0 .3em;
-  font: 800 clamp(4rem, 8.9vw, 10rem)/1.01 "Barlow Condensed", "Be Vietnam Pro", sans-serif;
-  text-transform: uppercase; letter-spacing: -.038em;
+  font: 800 clamp(4rem, 8.9vw, 10rem)/1.08 "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  text-transform: uppercase; letter-spacing: -.012em;
 }
 .ddv-hero h1 span { display: block; }
 .ddv-hero__copy > p:last-child { max-width: 38ch; font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.6; }
 .ddv-hero .ddv-art { position: absolute; inset: 0 0 0 47.62%; overflow: hidden; }
-.ddv-jump { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); margin-block: 1.4rem clamp(1.8rem,4vw,4rem); }
+.ddv-jump { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); margin-block: 1.4rem clamp(1.8rem,4vw,4rem); }
 .ddv-jump a {
   display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .1rem .8rem;
   min-height: 5rem; padding: .8rem clamp(.7rem, 2.5vw, 2rem);
@@ -29,6 +29,8 @@
 }
 .ddv-jump a + a { border-left: 0; }
 .ddv-jump a::after { content: "↓"; grid-column: 2; grid-row: 1/3; font-size: 1.25rem; }
+.ddv-jump a[href="didi.html"]::after { content: "→"; }
+.ddv .next-link--didi img { aspect-ratio: 1; object-fit: contain; }
 .ddv-jump span { font-weight: 600; font-size: clamp(1rem, 2vw, 1.5rem); }
 .ddv-jump small { grid-column: 1; grid-row: 2; color: #c9c5c0; }
 .ddv-jump a:hover, .ddv-jump a:focus-visible { background: #2c2928; }
@@ -42,7 +44,7 @@
 .ddv .sample__still img { aspect-ratio: auto; }
 .ddv .sample__caption { display: block; margin: .7rem 0 0; }
 .ddv .sample__series { display: block; margin-bottom: .18rem; color: #c5c0bc; font-size: .8rem; }
-.ddv .sample__caption strong { display: block; font-size: clamp(.96rem,1.5vw,1.45rem); line-height: 1.3; }
+.ddv .sample__caption strong { display: block; font-size: clamp(.96rem,1.5vw,1.45rem); line-height: 1.45; }
 .ddv .sample__length { position: absolute; top: .5rem; right: .5rem; color: #fff; background: #0d0d0dde; padding: .07rem .4rem; font-size: .75rem; font-variant-numeric: tabular-nums; border-radius: .2rem; }
 .ddv details { margin-top: clamp(1.3rem, 2.3vw, 2.4rem); }
 .ddv summary { width: fit-content; min-height: 44px; padding: .45rem 0; font-size: .92rem; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: .32em; }
@@ -63,7 +65,8 @@
   .ddv-hero h1 span { display: inline; }
   .ddv-section-head { grid-template-columns: 1fr; gap: .65rem; margin-bottom: 1.1rem; }
   .ddv .play-mark { right: .4rem; bottom: .4rem; width: 2rem; }
-  .ddv-jump { margin-top: 1rem; }
+  .ddv-jump { margin-top: 1rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ddv-jump a:last-child { grid-column: 1/-1; border-left: 1px solid #54524f; border-top: 0; min-height: 4rem; }
   .ddv-jump a { padding-inline: .65rem; column-gap: .35rem; }
   .ddv-jump span { font-size: .94rem; }
 }
