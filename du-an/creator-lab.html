@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="../fonts.css">
   <link rel="stylesheet" href="../style.css?v=4">
   <link rel="stylesheet" href="../display-font.css">
-  <link rel="stylesheet" href="../casebook.css?v=5">
+  <link rel="stylesheet" href="../casebook.css?v=6">
   <script defer src="../case-player.js?v=4"></script>
 </head>
 <body class="casebook casebook--creator">
+  <a class="case-skip" href="#case-main">Đến nội dung</a>
   <header class="casebar">
     <div class="case-wrap casebar__inner">
       <a class="case-signature" href="../index.html" aria-label="Ngọc Thông, trang chủ">Ngọc Thông<span>.</span></a>
@@ -23,21 +24,23 @@
       </nav>
     </div>
   </header>
-  <main>
-    <header class="case-hero">
-      <div class="case-visual case-visual--fashion" aria-hidden="true">
-        <img src="../assets/work/fashion-shore.webp" width="576" height="1024" alt="" fetchpriority="high">
-        <img src="../assets/work/motion.webp" width="576" height="1024" alt="">
-      </div>
-      <div class="case-wrap case-hero__inner">
-        <div class="case-hero__copy">
+  <main id="case-main">
+    <header class="lab-hero">
+      <div class="case-wrap lab-cover">
+        <div class="lab-heading">
           <p class="case-meta">Dự án cá nhân <span>/</span> TikTok <span>/</span> 2026</p>
-          <h1 lang="en">Creator <span>Lab</span></h1>
-          <nav aria-label="Hai series trong Creator Lab">
-            <a class="case-view" href="#ai-fashion" lang="en">AI Fashion</a>
-            <a class="case-view" href="#logo-in-motion" lang="en">Logo in Motion</a>
-          </nav>
+          <h1 lang="en">Creator <em>Lab</em></h1>
         </div>
+        <nav class="lab-diptych" aria-label="Hai series trong Creator Lab">
+          <a class="lab-fashion" href="#ai-fashion">
+            <img src="../assets/work/fashion-shore.webp" alt="" width="576" height="1024" fetchpriority="high">
+            <span lang="en">AI Fashion</span>
+          </a>
+          <a class="lab-motion" href="#logo-in-motion">
+            <img src="../assets/work/motion.webp" alt="" width="576" height="1024">
+            <span lang="en">Logo in Motion</span>
+          </a>
+        </nav>
       </div>
     </header>
     <div class="case-wrap">

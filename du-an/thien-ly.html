@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="../fonts.css">
   <link rel="stylesheet" href="../style.css?v=4">
   <link rel="stylesheet" href="../display-font.css">
-  <link rel="stylesheet" href="../casebook.css?v=5">
+  <link rel="stylesheet" href="../casebook.css?v=6">
   <script defer src="../case-player.js?v=4"></script>
 </head>
 <body class="casebook casebook--thien-ly">
+  <a class="case-skip" href="#case-main">Đến nội dung</a>
   <header class="casebar">
     <div class="case-wrap casebar__inner">
       <a class="case-signature" href="../index.html" aria-label="Ngọc Thông, trang chủ">Ngọc Thông<span>.</span></a>
@@ -23,16 +24,14 @@
       </nav>
     </div>
   </header>
-  <main>
-    <header class="case-hero">
-      <figure class="case-visual case-visual--food project-wide">
-          <img src="../assets/work/social.webp" width="1110" height="597" alt="Những món ăn được bày trên bàn tại Cơm Niêu Thiên Lý." fetchpriority="high">
-        </figure>
-      <div class="case-wrap case-hero__inner">
-        <div class="case-hero__copy">
-          <p class="case-meta">Facebook Reels <span>/</span> 04–07/2026</p>
-          <h1>Cơm Niêu <span>Thiên Lý</span></h1>
-          <a class="case-view" href="#tac-pham"><i aria-hidden="true"></i>Xem 3 video</a>
+  <main id="case-main">
+    <header class="food-hero">
+      <img class="food-scene" src="../assets/work/social.webp" width="1110" height="597" alt="Mâm cơm tại Cơm Niêu Thiên Lý." fetchpriority="high">
+      <div class="case-wrap food-cover">
+        <p class="case-meta">Facebook Reels <span>/</span> 04–07/2026</p>
+        <div class="food-signature">
+          <h1>Cơm Niêu <em>Thiên Lý</em></h1>
+          <a class="food-watch" href="#tac-pham">Xem 3 video</a>
         </div>
       </div>
     </header>
@@ -49,13 +48,13 @@
       <p>Lượt xem đến 06/08/2026, gồm tự nhiên và quảng cáo.</p>
       <div class="reel-list">
         <a data-screening href="https://www.facebook.com/reel/1311036094475687" target="_blank" rel="noopener noreferrer">
-          <strong>Sắp mở cửa tại Quận 1</strong><small>274K lượt xem · Ý tưởng, hỗ trợ quay, dẫn</small>
+          <strong>Sắp mở cửa tại Quận 1</strong><span class="food-result"><b>274K</b> lượt xem</span><small>Ý tưởng, hỗ trợ quay, dẫn</small>
         </a>
         <a data-screening href="https://www.facebook.com/reel/1015452274187072" target="_blank" rel="noopener noreferrer">
-          <strong>Đếm ngược khai trương chi nhánh 36</strong><small>74K lượt xem · Ý tưởng, hỗ trợ quay, dẫn</small>
+          <strong>Đếm ngược khai trương chi nhánh 36</strong><span class="food-result"><b>74K</b> lượt xem</span><small>Ý tưởng, hỗ trợ quay, dẫn</small>
         </a>
         <a data-screening href="https://www.facebook.com/reel/1641033200343477" target="_blank" rel="noopener noreferrer">
-          <strong>Cá heo đồng kho lạt</strong><small>138K lượt xem · Ý tưởng, hỗ trợ quay</small>
+          <strong>Cá heo đồng kho lạt</strong><span class="food-result"><b>138K</b> lượt xem</span><small>Ý tưởng, hỗ trợ quay</small>
         </a>
       </div>
     </section>
