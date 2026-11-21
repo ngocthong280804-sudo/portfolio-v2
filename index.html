@@ -17,14 +17,14 @@
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="style.css?v=4">
 
-  <link rel="stylesheet" href="screening.css?v=flow1">
+  <link rel="stylesheet" href="screening.css?v=profile2">
   <link rel="stylesheet" href="toolkit.css?v=studio1">
   <link rel="stylesheet" href="studio-type.css?v=1">
-  <script defer src="screening.js?v=flow1"></script>
+  <script defer src="screening.js?v=profile2"></script>
   <script defer src="intro.js?v=2"></script>
 </head>
 <body>
-  <a class="skip-work" href="#du-an">Đến tác phẩm</a>
+  <a class="skip-work" href="#gioi-thieu">Đến giới thiệu</a>
   <main id="top">
     <section class="intro" aria-label="Phim mở đầu" data-intro>
       <figure class="intro__media">
@@ -47,82 +47,43 @@
         </figcaption>
         <p class="intro__error" data-video-error hidden>Video chưa tải được. Hãy thử tải lại trang.</p>
       </figure>
-      <a class="intro-work" href="#du-an" aria-label="Đến tác phẩm"><span aria-hidden="true"></span></a>
+      <a class="intro-work" href="#gioi-thieu" aria-label="Đến giới thiệu"><span aria-hidden="true"></span></a>
     </section>
 
     <header class="rail">
       <div class="wrap rail__inner">
         <a class="signature" href="#top" aria-label="Ngọc Thông, về đầu trang">Ngọc Thông</a>
         <nav aria-label="Điều hướng chính">
-          <a href="#du-an">Dự án</a><a href="#gioi-thieu">Kinh nghiệm</a><a href="#ky-nang">Kỹ năng &amp; công cụ</a><a href="#lien-he">Liên hệ</a>
+          <a href="#gioi-thieu">Giới thiệu</a>
+          <a href="#kinh-nghiem">Kinh nghiệm</a>
+          <a href="#ky-nang">Kỹ năng</a>
+          <a href="#cong-cu">Công cụ</a>
+          <a href="#du-an">Dự án</a>
+          <a href="#lien-he">Liên hệ</a>
         </nav>
       </div>
     </header>
 
-    <section class="projection" id="du-an" aria-labelledby="work-title">
-      <header class="projection-head">
-        <p class="credit">Video Editor · Content Creator · Social AI</p>
-        <h2 id="work-title">Dự án chọn lọc</h2>
-      </header>
-      <div class="projection-stage">
-        <article class="client-feature" aria-labelledby="ddv-name">
-          <div class="client-copy">
-            <h3 id="ddv-name"><a href="du-an/di-dong-viet.html">Di Động Việt</a></h3>
-            <p>Mình thực hiện 20 video cho cửa hàng, phụ kiện và sự kiện, đồng thời xây nhận diện cho mascot DiDi.</p>
-            <ul class="case-paths">
-              <li><a href="du-an/di-dong-viet.html#ai-motion"><span>AI Motion<small>9 video hoàn toàn bằng AI</small></span><span aria-hidden="true">↗</span></a></li>
-              <li><a href="du-an/di-dong-viet.html#content-creator"><span>Content Creator<small>11 clip mình làm nội dung và dựng bằng AI</small></span><span aria-hidden="true">↗</span></a></li>
-              <li id="poster-didi"><a href="du-an/didi.html"><span>DiDi Du Ký<small>Nhận diện mascot cho Facebook và TikTok</small></span><span aria-hidden="true">↗</span></a></li>
-            </ul>
-          </div>
-          <div class="client-frame">
-            <img src="assets/folio/motion.webp" alt="Cảnh Trái Đất trong video điểm hẹn DTR của Di Động Việt" width="1088" height="612">
-            <button class="watch-preview" type="button" hidden><span aria-hidden="true">▷</span> Phát trích đoạn</button>
-          </div>
-        </article>
-        <div class="other-cases">
-          <a href="du-an/thien-ly.html">
-            <img src="assets/work/social.webp" alt="Mâm cơm trong loạt Reels Thiên Lý" loading="lazy" width="1110" height="597">
-            <small>Facebook Reels · Nội dung thương hiệu</small>
-            <h3>Cơm Niêu Thiên Lý <span aria-hidden="true">↗</span></h3>
-            <p>Mình dẫn Reel khai trương đạt 274 nghìn lượt xem.</p>
-          </a>
-          <a href="du-an/creator-lab.html">
-            <img src="assets/folio/creator-lab.webp" alt="Thử nghiệm thời trang bên biển và chuyển động logo" loading="lazy" width="1152" height="648">
-            <small>Dự án cá nhân</small>
-            <h3>Creator Lab <span aria-hidden="true">↗</span></h3>
-            <p>Mình tạo hình thời trang bằng AI và lập trình chuyển động logo.</p>
-          </a>
-        </div>
+    <section class="bio personal" id="gioi-thieu" aria-labelledby="about-title">
+      <div class="wrap personal-grid">
+        <header>
+          <p class="artist-label">Giới thiệu</p>
+          <h2 id="about-title">Ngọc Thông</h2>
+          <p class="personal-role">Video Editor · Content Creator · Social AI</p>
+          <p class="artist-lede">Mình viết kịch bản, dẫn hình và dựng video về công nghệ, ẩm thực và thời trang. Mình dùng AI để tạo chuyển động và thử nghiệm cách kể chuyện bằng hình ảnh.</p>
+        </header>
+        <img src="assets/work/thong-portrait.webp?v=4" alt="Chân dung Ngọc Thông" width="900" height="1200" loading="lazy">
       </div>
-      <dialog class="preview-dialog" aria-label="Trích đoạn Di Động Việt">
-        <form method="dialog"><button>Đóng <span aria-hidden="true">×</span></button></form>
-        <video controls playsinline muted preload="none" data-src="assets/folio/ddv-preview.mp4"></video>
-      </dialog>
     </section>
 
-    <section class="bio" id="gioi-thieu" aria-labelledby="about-title">
-      <div class="wrap artist-grid">
-        <header class="artist-heading">
-          <p class="artist-label">Ngọc Thông</p>
-          <h2 id="about-title">Kinh nghiệm</h2>
-        </header>
-        <figure class="artist-portrait">
-          <img src="assets/work/thong-portrait.webp?v=4" alt="Ngọc Thông trong chiếc áo khoác xám ở hành lang ngoài trời" width="900" height="1200" loading="lazy">
-        </figure>
-        <div class="artist-copy">
-          <p class="artist-lede">Mình viết kịch bản, dẫn và dựng video về công nghệ, ẩm thực và thời trang.</p>
-          <dl class="artist-credits">
-            <div>
-              <dt>Cơm Niêu Thiên Lý</dt>
-              <dd><strong>50+</strong><span>KOC/KOL mình từng phối hợp. Hỗ trợ vận hành kênh giao đồ ăn cho 34 chi nhánh.</span></dd>
-            </div>
-            <div>
-              <dt>TikTok UniCamp × Creative Point</dt>
-              <dd><strong>1.000+</strong><span>người theo dõi sau một tuần xây kênh từ 0 cùng nhóm.</span></dd>
-            </div>
-          </dl>
-        </div>
+    <section class="experience" id="kinh-nghiem" aria-labelledby="experience-title">
+      <div class="wrap experience-grid">
+        <h2 id="experience-title">Kinh nghiệm</h2>
+        <dl>
+          <div><dt>Di Động Việt</dt><dd>Sản xuất 20 video về công nghệ và xây nhận diện cho mascot DiDi.</dd></div>
+          <div><dt>Cơm Niêu Thiên Lý</dt><dd>Phối hợp với hơn 50 KOC/KOL và hỗ trợ vận hành kênh giao đồ ăn cho 34 chi nhánh.</dd></div>
+          <div><dt>TikTok UniCamp × Creative Point</dt><dd>Cùng nhóm xây kênh từ 0 lên hơn 1.000 người theo dõi trong một tuần.</dd></div>
+        </dl>
       </div>
     </section>
 
@@ -210,7 +171,11 @@
             </div>
           </div>
         </div>
-        <section class="craft__tools" id="cong-cu" aria-labelledby="tools-title">
+      </div>
+    </section>
+
+    <section class="craft instruments" id="cong-cu" aria-labelledby="tools-title">
+      <div class="wrap craft__tools">
           <h2 class="craft__title" id="tools-title">Công <em>cụ.</em></h2>
           <div class="craft__rack">
             <div class="craft__group">
@@ -268,9 +233,61 @@
               </div>
             </details>
           </div>
-        </section>
       </div>
     </section>
+
+    <section class="projection" id="du-an" aria-labelledby="work-title">
+      <header class="projection-head"><h2 id="work-title">Tác phẩm</h2><p>Video Editor <span>/</span> Content Creator <span>/</span> Social AI</p></header>
+      <div class="projection-stage">
+        <article class="feature feature--di-dong-viet" id="poster-di-dong-viet" aria-labelledby="title-di-dong-viet">
+          <img class="feature-art" src="assets/folio/motion.webp" alt="Trái Đất trong cảnh mở đầu video DTR" loading="lazy">
+          <div class="feature-copy">
+            <p class="credit">AI Motion · Content Creator</p>
+            <h3 id="title-di-dong-viet">Di Động Việt</h3>
+            <p class="feature-note">9 video motion hoàn toàn bằng AI. 11 clip mình làm nội dung và dựng bằng AI.</p>
+            <div class="feature-links"><a href="du-an/di-dong-viet.html">Xem 20 video <span aria-hidden="true">↗</span></a><button class="watch-preview" type="button" hidden>Phát trích đoạn <span aria-hidden="true">▷</span></button></div>
+          </div>
+        </article>
+        <article class="feature feature--creator-lab" id="poster-creator-lab" aria-labelledby="title-creator-lab">
+          <img class="feature-art" src="assets/folio/creator-lab.webp" alt="Khung hình thời trang bên biển và chuyển động logo TikTok" loading="lazy">
+          <div class="feature-copy">
+            <p class="credit">AI Fashion · Logo in Motion</p>
+            <h3 id="title-creator-lab">Creator Lab</h3>
+            <p class="feature-note">Mình tạo hình thời trang bằng AI và lập trình chuyển động logo.</p>
+            <div class="feature-links"><a href="du-an/creator-lab.html">Xem hai series <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+        <article class="feature feature--didi" id="poster-didi" aria-labelledby="title-didi">
+          <img class="feature-art" src="assets/work/didi/didi.webp" alt="Mascot DiDi trong bộ nhận diện đỏ trắng" loading="lazy">
+          <div class="feature-copy">
+            <p class="credit">Nhận diện mascot · Di Động Việt</p>
+            <h3 id="title-didi">DiDi Du Ký</h3>
+            <p class="feature-note">Mình xây nhận diện cho DiDi để phát triển Facebook và TikTok.</p>
+            <div class="feature-links"><a href="du-an/didi.html">Xem nhận diện <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+        <article class="feature feature--thien-ly" id="poster-thien-ly" aria-labelledby="title-thien-ly">
+          <img class="feature-art" src="assets/work/social.webp" alt="Mâm cơm niêu trong loạt Reels Thiên Lý" loading="lazy">
+          <div class="feature-copy">
+            <p class="credit">Kịch bản &amp; dẫn hình · Facebook Reels</p>
+            <h3 id="title-thien-ly">Cơm Niêu Thiên Lý</h3>
+            <p class="feature-note">Mình dẫn Reel khai trương đạt 274 nghìn lượt xem.</p>
+            <div class="feature-links"><a href="du-an/thien-ly.html">Xem Reels <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+      </div>
+      <nav class="film-selector" aria-label="Chọn tác phẩm" hidden>
+        <button type="button" aria-controls="poster-di-dong-viet" aria-pressed="false"><img src="assets/work/ddv/gio-vang-art.webp" alt="" loading="lazy"><span>Di Động Việt</span></button>
+        <button type="button" aria-controls="poster-creator-lab" aria-pressed="false"><img src="assets/work/fashion-shore.webp" alt="" loading="lazy"><span>Creator Lab</span></button>
+        <button type="button" aria-controls="poster-didi" aria-pressed="false"><img src="assets/work/didi/avatar.webp" alt="" loading="lazy"><span>DiDi Du Ký</span></button>
+        <button type="button" aria-controls="poster-thien-ly" aria-pressed="false"><img src="assets/work/social.webp" alt="" loading="lazy"><span>Cơm Niêu Thiên Lý</span></button>
+      </nav>
+      <dialog class="preview-dialog" aria-label="Trích đoạn Di Động Việt">
+        <form method="dialog"><button>Đóng <span aria-hidden="true">×</span></button></form>
+        <video controls playsinline muted preload="none" data-src="assets/folio/ddv-preview.mp4"></video>
+      </dialog>
+    </section>
+
   </main>
 
   <footer class="outro" id="lien-he">
