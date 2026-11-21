@@ -1,0 +1,113 @@
+.craft {
+  --craft-muted: #b9b9b2;
+  --craft-line: #464742;
+  --craft-accent: #d6fa49;
+  background: #1a1b18;
+  color: #f4f3ed;
+  scroll-margin-top: 5rem;
+}
+.craft__spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6.5vw, 8rem);
+  padding-block: clamp(3.75rem, 8vw, 7.5rem);
+}
+.craft .craft__title {
+  color: inherit;
+  margin: 0 0 clamp(1.45rem, 2.5vw, 2.5rem);
+  font-family: var(--cut-display, 'Barlow Condensed', 'Be Vietnam Pro', sans-serif);
+  font-size: clamp(3.15rem, 6.1vw, 6.4rem);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -.025em;
+}
+.craft__title span { color: inherit; }
+.craft ul { list-style: none; padding: 0; margin: 0; }
+.craft__roles > li {
+  border-top: 1px solid var(--craft-line);
+  padding: 1rem 0 1.15rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1.1rem;
+  row-gap: .45rem;
+  align-items: baseline;
+}
+.craft__roles h3 {
+  color: inherit;
+  margin: 0;
+  font-family: var(--sans, 'Be Vietnam Pro', sans-serif);
+  font-size: clamp(1.27rem, 2.1vw, 2rem);
+  font-weight: 500;
+  line-height: 1.24;
+  letter-spacing: -.045em;
+}
+.craft__roles p {
+  grid-column: 1/-1;
+  grid-row: 2;
+  margin: 0;
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--craft-muted);
+}
+.craft__roles a {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--craft-accent);
+  font-size: .85rem;
+  font-weight: 500;
+  padding-block: .35em;
+  text-decoration: underline;
+  text-decoration-color: #879c44;
+  text-underline-offset: .28em;
+}
+.craft__roles a:hover { text-decoration-color: currentColor; }
+.craft__tools { scroll-margin-top: 5rem; }
+.craft__rack { border-top: 1px solid var(--craft-line); }
+.craft__group { padding-block: .92rem 1.15rem; }
+.craft__group + .craft__group { border-top: 1px solid var(--craft-line); }
+.craft__group h3 {
+  color: var(--craft-muted);
+  font-family: var(--sans, 'Be Vietnam Pro', sans-serif);
+  font-size: .9rem;
+  font-weight: 500;
+  margin: 0 0 .65rem;
+  line-height: 1.4;
+}
+.craft__group ul {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: clamp(.65rem, 1.3vw, 1.4rem);
+  row-gap: .65rem;
+}
+.craft__group li {
+  display: inline-flex;
+  align-items: center;
+  gap: .44rem;
+  font: 500 .87rem/1.35 var(--sans, 'Be Vietnam Pro', sans-serif);
+}
+.craft__icon {
+  width: 2.3rem;
+  height: 2.3rem;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: .62rem;
+  background: #f0efe9;
+}
+.craft .craft__icon img { display: block; width: 1.5rem; height: 1.5rem; object-fit: contain; }
+@media (max-width: 65rem) and (min-width: 49rem) {
+  .craft__roles > li { display: block; }
+  .craft__roles p { margin-top: .4rem; }
+  .craft__roles a { display: inline-block; margin-top: .35rem; }
+}
+@media (max-width: 48.99rem) {
+  .craft__spread { grid-template-columns: 1fr; gap: 2.7rem; }
+}
+@media (max-width: 36rem) {
+  .craft__roles > li { display: block; }
+  .craft__roles p { margin-top: .45rem; }
+  .craft__roles a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .craft__group ul { column-gap: 1.15rem; }
+}

@@ -8,53 +8,81 @@
   <title>Logo in Motion — Ngọc Thông</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../fonts.css">
-  <link rel="stylesheet" href="../style.css?v=3">
+  <link rel="stylesheet" href="../style.css?v=4">
+  <link rel="stylesheet" href="../display-font.css">
+  <link rel="stylesheet" href="../casebook.css?v=4">
+  <script defer src="../case-player.js?v=4"></script>
 </head>
-<body class="project-page">
-  <header class="sitebar">
-    <div class="wrap sitebar__inner">
-      <a class="wordmark" href="../index.html#du-an">Ngọc <i>Thông.</i></a>
+<body class="casebook casebook--motion">
+  <header class="casebar">
+    <div class="case-wrap casebar__inner">
+      <a class="case-signature" href="../index.html" aria-label="Ngọc Thông, trang chủ">Ngọc Thông<span>.</span></a>
       <nav aria-label="Điều hướng chính">
-        <a href="../index.html#du-an">Dự án</a>
+        <a class="backlink" href="../index.html#du-an">Tất cả dự án</a>
         <a href="../index.html#lien-he">Liên hệ</a>
       </nav>
     </div>
   </header>
-  <main class="wrap">
-    <header class="project-head">
-      <a class="backlink" href="../index.html#du-an">Tất cả dự án</a>
-      <p class="kicker">Dự án cá nhân · Đồ họa chuyển động · 2026</p>
-      <h1 lang="en">Logo <em>in Motion.</em></h1>
-      <p class="project-lede">Mình viết chuyển động bằng React và Remotion, lấy những biểu tượng quen thuộc làm chất liệu. Ba bài thử dưới đây là một phần trong loạt sáu video mình thực hiện cho kênh @leotnt.</p>
-      <dl class="credits">
+  <main>
+    <header class="case-hero">
+      <div class="case-visual case-visual--motion" aria-hidden="true">
+          <div class="case-visual__slides">
+            <img src="../assets/work/motion-meta.webp" width="576" height="1024" alt="">
+            <img src="../assets/work/motion.webp" width="576" height="1024" alt="" fetchpriority="high">
+            <img src="../assets/work/motion-canva.webp" width="576" height="1024" alt="">
+          </div>
+        </div>
+      <div class="case-wrap case-hero__inner">
+        <div class="case-hero__copy">
+          <p class="case-meta">Motion design cá nhân <span> / </span> 2026</p>
+          <h1 lang="en">Logo <span>in Motion</span></h1>
+          <a class="case-view" href="#tac-pham"><i aria-hidden="true"></i>Xem 3 video</a>
+        </div>
+      </div>
+    </header>
+    <div class="case-wrap">
+      <div class="case-description">
+        <p class="case-lede">Mình viết chuyển động bằng React và Remotion, lấy những biểu tượng quen thuộc làm chất liệu. Ba bài thử dưới đây là một phần trong loạt sáu video mình thực hiện cho kênh @leotnt.</p>
+        <dl class="credits">
         <div><dt>Vai trò</dt><dd>Ý tưởng và dựng chuyển động</dd></div>
         <div><dt>Công cụ</dt><dd>React, Remotion</dd></div>
         <div><dt>Kênh</dt><dd><a href="https://www.tiktok.com/@leotnt" target="_blank" rel="noopener noreferrer">@leotnt</a></dd></div>
       </dl>
-    </header>
-    <section class="project-samples" aria-labelledby="sample-heading">
+      </div>
+      <section id="tac-pham" class="project-samples" aria-labelledby="sample-heading">
       <h2 id="sample-heading">Các bài thử chuyển động</h2>
       <div class="sample-grid">
-        <a class="sample" href="https://www.tiktok.com/@leotnt/video/7669405084509375762" target="_blank" rel="noopener noreferrer">
-          <span class="sample__still"><img src="../assets/work/motion-meta.webp" width="576" height="1024" alt="Chữ f đặc trưng của Facebook trong khung hình video chuyển động." decoding="async"><span class="play-mark" aria-hidden="true"></span></span>
+        <a class="sample" data-screening href="https://www.tiktok.com/@leotnt/video/7669405084509375762" target="_blank" rel="noopener noreferrer">
+          <span class="sample__still"><img loading="lazy" src="../assets/work/motion-meta.webp" width="576" height="1024" alt="Chữ f đặc trưng của Facebook trong khung hình video chuyển động." decoding="async"><span class="play-mark" aria-hidden="true"></span></span>
           <span class="sample__caption"><strong>Meta · Facebook</strong><small>Xem trên TikTok</small></span>
         </a>
-        <a class="sample" href="https://www.tiktok.com/@leotnt/video/7668963068902149384" target="_blank" rel="noopener noreferrer">
-          <span class="sample__still"><img src="../assets/work/motion.webp" width="576" height="1024" alt="Khung hình từ bài thử chuyển động logo TikTok." decoding="async"><span class="play-mark" aria-hidden="true"></span></span>
+        <a class="sample" data-screening href="https://www.tiktok.com/@leotnt/video/7668963068902149384" target="_blank" rel="noopener noreferrer">
+          <span class="sample__still"><img loading="lazy" src="../assets/work/motion.webp" width="576" height="1024" alt="Khung hình từ bài thử chuyển động logo TikTok." decoding="async"><span class="play-mark" aria-hidden="true"></span></span>
           <span class="sample__caption"><strong>TikTok</strong><small>Xem trên TikTok</small></span>
         </a>
-        <a class="sample" href="https://www.tiktok.com/@leotnt/video/7668300120705764615" target="_blank" rel="noopener noreferrer">
-          <span class="sample__still"><img src="../assets/work/motion-canva.webp" width="576" height="1024" alt="Khung hình từ bài thử chuyển động logo Canva." decoding="async"><span class="play-mark" aria-hidden="true"></span></span>
+        <a class="sample" data-screening href="https://www.tiktok.com/@leotnt/video/7668300120705764615" target="_blank" rel="noopener noreferrer">
+          <span class="sample__still"><img loading="lazy" src="../assets/work/motion-canva.webp" width="576" height="1024" alt="Khung hình từ bài thử chuyển động logo Canva." decoding="async"><span class="play-mark" aria-hidden="true"></span></span>
           <span class="sample__caption"><strong>Canva</strong><small>Xem trên TikTok</small></span>
         </a>
       </div>
     </section>
+    </div>
   </main>
   <footer class="project-next">
-    <div class="wrap">
-      <p class="kicker">Dự án tiếp theo</p>
-      <a href="fashion.html">AI Fashion</a>
+    <div class="case-wrap">
+      <a href="fashion.html" class="next-link">
+        <img src="../assets/work/fashion-shore.webp" loading="lazy" alt="" width="150" height="100">
+        <span><small>Dự án tiếp theo</small><strong>AI Fashion</strong></span>
+      </a>
     </div>
   </footer>
+  <dialog class="screening-dialog" id="screening-dialog" aria-labelledby="screening-title">
+    <div class="screening-dialog__head">
+      <h2 id="screening-title"></h2>
+      <form method="dialog"><button type="submit" autofocus>Đóng</button></form>
+      <a class="screening-dialog__source" target="_blank" rel="noopener noreferrer"></a>
+    </div>
+    <div class="screening-stage"></div>
+  </dialog>
 </body>
 </html>

@@ -8,10 +8,15 @@
   <title>Ngọc Thông</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="display-font.css">
+  <link rel="stylesheet" href="screening.css?v=4">
+  <link rel="stylesheet" href="toolkit.css?v=4">
+  <script defer src="screening.js?v=4"></script>
   <script defer src="intro.js?v=2"></script>
 </head>
 <body>
+  <a class="skip-work" href="#du-an">Đến tác phẩm</a>
   <main id="top">
     <section class="intro" aria-label="Phim mở đầu" data-intro>
       <figure class="intro__media">
@@ -36,107 +41,153 @@
       </figure>
     </section>
 
-    <header class="sitebar">
-      <div class="wrap sitebar__inner">
-        <a class="wordmark" href="#top" aria-label="Ngọc Thông, về đầu trang">Ngọc <i>Thông.</i></a>
+    <header class="rail">
+      <div class="wrap rail__inner">
+        <a class="signature" href="#top" aria-label="Ngọc Thông, về đầu trang">NT<span>.</span></a>
         <nav aria-label="Điều hướng chính">
-          <a href="#du-an">Dự án</a>
-          <a href="#gioi-thieu">Giới thiệu</a>
-          <a href="#lien-he">Liên hệ</a>
+          <a href="#du-an">Dự án</a><a href="#ky-nang">Kỹ năng</a><a href="#cong-cu">Công cụ</a><a href="#gioi-thieu">Giới thiệu</a><a href="#lien-he">Liên hệ</a>
         </nav>
       </div>
     </header>
 
-    <section class="work" id="du-an" aria-labelledby="work-title">
+    <section class="screening" id="du-an" aria-labelledby="work-title">
       <div class="wrap">
-        <div class="work-head">
-          <h2 class="display" id="work-title">Dự án <em>chọn lọc.</em></h2>
-          <p class="disciplines" lang="en"><span>Video Editor</span> <span>Content Creator</span> <span>Social AI</span></p>
-        </div>
-
-        <article class="feature" aria-labelledby="fashion-title">
-          <a class="feature__link" href="du-an/fashion.html" aria-labelledby="fashion-title fashion-link">
-            <div class="feature__copy">
-              <p class="kicker">Dự án cá nhân · TikTok</p>
-              <h3 id="fashion-title" lang="en">AI <em>Fashion</em></h3>
-              <p class="feature__summary">Thử ba cách lên hình cho thời trang nam, từ bước đi trên phố đến dáng đứng bên biển. Mình tạo hình bằng AI và dựng nhịp bằng CapCut.</p>
-              <span class="action" id="fashion-link">Xem dự án</span>
-            </div>
-            <div class="feature__stills" aria-hidden="true">
-              <img src="assets/work/fashion-shore.webp" alt="" width="576" height="1024" loading="lazy">
-              <img src="assets/work/fashion.webp" alt="" width="576" height="1024" loading="lazy">
-            </div>
-          </a>
-        </article>
-
-        <div class="projects">
-          <article class="project-card">
-            <a href="du-an/thien-ly.html" aria-labelledby="thienly-title">
-              <div class="cover cover--food">
-                <img src="assets/work/social.webp" width="1110" height="597" loading="lazy" alt="Mâm cơm và đôi đũa gắp thức ăn tại Cơm Niêu Thiên Lý"><span class="cover-link" aria-hidden="true">Xem dự án</span>
+        <header class="screening-head">
+          <h2 id="work-title">Tác phẩm.</h2>
+          <p lang="en">Video Editor <span>/</span> Content Creator <span>/</span> Social AI</p>
+        </header>
+        <div class="edit-deck" data-deck>
+          <div class="deck-strip" aria-label="Chọn dự án">
+            <a class="deck-tab" href="du-an/fashion.html" id="select-fashion" data-panel="preview-fashion"><img src="assets/work/fashion-shore.webp" alt="" width="56" height="56"><span>AI Fashion</span></a>
+            <a class="deck-tab" href="du-an/thien-ly.html" id="select-thien-ly" data-panel="preview-thien-ly"><img src="assets/work/social.webp" alt="" width="56" height="56"><span>Thiên Lý</span></a>
+            <a class="deck-tab" href="du-an/motion.html" id="select-motion" data-panel="preview-motion"><img src="assets/work/motion.webp" alt="" width="56" height="56"><span>Logo in Motion</span></a>
+          </div>
+          <div class="deck-stage">
+            <article class="cut cut--fashion" id="preview-fashion" aria-labelledby="title-fashion">
+              <div class="cut-art fashion-art" aria-hidden="true">
+                <img class="fashion-back" src="assets/work/fashion-street.webp" width="576" height="1024" alt="" loading="lazy">
+                <img class="fashion-front" src="assets/work/fashion-shore.webp" width="576" height="1024" alt="" loading="lazy">
               </div>
-              <div class="card-credit"><span>Facebook Reels</span><span>Ý tưởng · Host</span></div>
-              <h3 id="thienly-title">Cơm Niêu <em>Thiên Lý</em></h3>
-              <p>Mình góp ý tưởng và làm host cho Reel giới thiệu chi nhánh Quận 1. Video ghi nhận 274 nghìn lượt xem.</p>
-            </a>
-          </article>
-          <article class="project-card">
-            <a href="du-an/motion.html" aria-labelledby="motion-title">
-              <div class="cover cover--motion" aria-hidden="true"><span class="cover-link">Xem dự án</span>
-                <div class="motion-stack">
-                  <img src="assets/work/motion-meta.webp" alt="" width="576" height="1024" loading="lazy">
-                  <img src="assets/work/motion.webp" alt="" width="576" height="1024" loading="lazy">
-                  <img src="assets/work/motion-canva.webp" alt="" width="576" height="1024" loading="lazy">
-                </div>
+              <div class="cut-copy">
+                <p class="cut-type">TikTok <span>/</span> Thời trang nam</p>
+                <h3 id="title-fashion" lang="en">AI<br> Fashion</h3>
+                <p class="cut-credit">Ý tưởng, tạo hình AI và dựng video cho kênh thời trang cá nhân.</p>
+                <a class="open-cut" href="du-an/fashion.html">Khám phá dự án</a>
               </div>
-              <div class="card-credit"><span>React &amp; Remotion</span><span>Motion design</span></div>
-              <h3 id="motion-title" lang="en">Logo <em>in Motion</em></h3>
-              <p>Sáu bài tập chuyển động logo. Mình dùng code để chỉnh từng nhịp tăng tốc, dừng và chuyển cảnh.</p>
-            </a>
-          </article>
+            </article>
+            <article class="cut cut--food" id="preview-thien-ly" aria-labelledby="title-thien-ly">
+              <div class="cut-art food-art" aria-hidden="true"><img src="assets/work/social.webp" width="1110" height="597" alt="" loading="lazy"></div>
+              <div class="cut-copy">
+                <p class="cut-type">Facebook Reels <span>/</span> Ẩm thực</p>
+                <h3 id="title-thien-ly">Cơm Niêu<br> Thiên Lý</h3>
+                <p class="cut-credit">Cùng lên ý tưởng, hỗ trợ quay và làm host cho Reel khai trương đạt 274 nghìn lượt xem.</p>
+                <a class="open-cut" href="du-an/thien-ly.html">Khám phá dự án</a>
+              </div>
+            </article>
+            <article class="cut cut--motion" id="preview-motion" aria-labelledby="title-motion">
+              <div class="cut-art logo-art" aria-hidden="true">
+                <img src="assets/work/motion-meta.webp" width="576" height="1024" alt="" loading="lazy">
+                <img src="assets/work/motion.webp" width="576" height="1024" alt="" loading="lazy">
+                <img src="assets/work/motion-canva.webp" width="576" height="1024" alt="" loading="lazy">
+              </div>
+              <div class="cut-copy">
+                <p class="cut-type">React + Remotion <span>/</span> Motion design</p>
+                <h3 id="title-motion" lang="en">Logo<br> in Motion</h3>
+                <p class="cut-credit">Sáu bài thử chuyển động logo. Mình dùng code để tinh chỉnh nhịp, tốc độ và điểm dừng.</p>
+                <a class="open-cut" href="du-an/motion.html">Khám phá dự án</a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="profile" id="gioi-thieu" aria-labelledby="about-title">
-      <div class="wrap profile__inner">
-        <figure class="profile__figure">
-          <img src="assets/work/thong-portrait.webp" alt="Ngọc Thông trong chiếc áo khoác xám, đứng ở hành lang ngoài trời" width="900" height="1200" loading="lazy">
+    <section class="craft" id="ky-nang" aria-labelledby="craft-title">
+      <div class="wrap craft__spread">
+        <div class="craft__skills">
+          <h2 class="craft__title" id="craft-title">Kỹ năng<span>.</span></h2>
+          <ul class="craft__roles">
+            <li>
+              <h3>Dựng phim &amp; motion</h3>
+              <p>Cắt theo nhịp nhạc, đặt chữ và dựng chuyển động logo bằng React, Remotion.</p>
+              <a href="du-an/motion.html">Xem Logo in Motion</a>
+            </li>
+            <li>
+              <h3>Nội dung social</h3>
+              <p>Lên lịch nội dung, viết kịch bản video ngắn, làm host và phối hợp buổi quay với KOC/KOL.</p>
+              <a href="du-an/thien-ly.html">Xem Reels Thiên Lý</a>
+            </li>
+            <li>
+              <h3>Sản xuất với AI</h3>
+              <p>Viết prompt, thử góc máy và bối cảnh, chọn khung hình rồi dựng thành video thời trang.</p>
+              <a href="du-an/fashion.html">Xem AI Fashion</a>
+            </li>
+          </ul>
+        </div>
+        <div class="craft__tools" id="cong-cu">
+          <h2 class="craft__title">Công cụ<span>.</span></h2>
+          <div class="craft__rack">
+            <div class="craft__group">
+              <h3>Dựng &amp; thiết kế</h3>
+              <ul>
+                <li><span class="craft__icon"><img src="assets/tools/capcut.svg" alt="" width="32" height="32" loading="lazy"></span>CapCut</li>
+                <li><span class="craft__icon"><img src="assets/tools/remotion.svg" alt="" width="32" height="32" loading="lazy"></span>Remotion</li>
+                <li><span class="craft__icon"><img src="assets/tools/photoshop.svg" alt="" width="32" height="32" loading="lazy"></span>Photoshop</li>
+                <li><span class="craft__icon"><img src="assets/tools/canva.svg" alt="" width="32" height="32" loading="lazy"></span>Canva</li>
+              </ul>
+            </div>
+            <div class="craft__group">
+              <h3>AI &amp; phát triển ý tưởng</h3>
+              <ul>
+                <li><span class="craft__icon"><img src="assets/tools/chatgpt.svg" alt="" width="32" height="32" loading="lazy"></span>ChatGPT</li>
+                <li><span class="craft__icon"><img src="assets/tools/gemini.svg" alt="" width="32" height="32" loading="lazy"></span>Gemini</li>
+                <li><span class="craft__icon"><img src="assets/tools/claude.svg" alt="" width="32" height="32" loading="lazy"></span>Claude Code</li>
+              </ul>
+            </div>
+            <div class="craft__group">
+              <h3>Kênh &amp; dữ liệu</h3>
+              <ul>
+                <li><span class="craft__icon"><img src="assets/tools/tiktok.svg" alt="" width="32" height="32" loading="lazy"></span>TikTok Shop</li>
+                <li><span class="craft__icon"><img src="assets/tools/meta.svg" alt="" width="32" height="32" loading="lazy"></span>Meta Business Suite</li>
+                <li><span class="craft__icon"><img src="assets/tools/sheets.svg" alt="" width="32" height="32" loading="lazy"></span>Google Sheets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio" id="gioi-thieu" aria-labelledby="about-title">
+      <div class="wrap bio-layout">
+        <figure class="bio-portrait">
+          <img src="assets/work/thong-portrait.webp?v=4" alt="Ngọc Thông trong chiếc áo khoác xám ở hành lang ngoài trời" width="900" height="1200" loading="lazy">
         </figure>
-        <div class="profile__body">
-          <p class="kicker">Giới thiệu</p>
-          <h2 class="display" id="about-title">Mình là <em>Thông.</em></h2>
-          <p class="profile__intro">Mình viết kịch bản, đứng trước máy quay và ngồi bàn dựng. Với các kênh cá nhân, mình còn dùng AI để dựng bối cảnh và thử cách kể cùng một ý tưởng trong vài giây.</p>
-          <dl class="experience">
-            <div>
-              <dt>Cơm Niêu Thiên Lý</dt>
-              <dd>Làm nội dung social, phối hợp với hơn 50 KOC/KOL và tham gia vận hành các ứng dụng giao đồ ăn cho 34 chi nhánh.</dd>
-            </div>
-            <div>
-              <dt>TikTok UniCamp × Creative Point</dt>
-              <dd>Lên nội dung, dẫn, dựng video và livestream. Cùng nhóm xây kênh từ 0 lên hơn 1.000 người theo dõi trong một tuần.</dd>
-            </div>
+        <div class="bio-copy">
+          <p class="bio-label">Giới thiệu</p>
+          <h2 id="about-title">Ngọc<br> Thông.</h2>
+          <p class="bio-lede">Mình viết kịch bản, đứng trước máy quay và ngồi bàn dựng. Trên hai kênh TikTok cá nhân, mình thử kể chuyện bằng thời trang AI và chuyển động logo.</p>
+          <dl>
+            <div><dt>Cơm Niêu Thiên Lý</dt><dd>Làm nội dung social, phối hợp với hơn 50 KOC/KOL và tham gia vận hành ứng dụng giao đồ ăn cho 34 chi nhánh.</dd></div>
+            <div><dt>TikTok UniCamp × Creative Point</dt><dd>Cùng nhóm xây kênh từ 0 lên hơn 1.000 người theo dõi trong một tuần. Mình lên nội dung, dẫn, dựng video và livestream.</dd></div>
           </dl>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="contact" id="lien-he">
+  <footer class="outro" id="lien-he">
     <div class="wrap">
-      <div class="contact__main">
-        <div>
-          <p class="kicker">Liên hệ</p>
-          <h2 class="display">Cùng làm <em>dự án.</em></h2>
+      <div class="outro-head">
+        <h2>Liên hệ.</h2>
+        <div class="outro-mail">
+          <a href="mailto:ngocthong280804@gmail.com" id="email-link">ngocthong280804@gmail.com</a>
+          <button data-copy-email type="button" hidden>Sao chép email</button>
+          <span class="copy-status" role="status" data-copy-status></span>
         </div>
-        <a class="contact__email" href="mailto:ngocthong280804@gmail.com">ngocthong280804@gmail.com</a>
       </div>
-      <div class="contact__foot">
-        <span class="wordmark">Ngọc <i>Thông.</i></span>
-        <nav aria-label="Trang cá nhân và điều hướng">
-          <a href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="#top">Về đầu trang</a>
-        </nav>
+      <div class="outro-foot">
+        <span>Ngọc Thông</span>
+        <nav aria-label="Liên kết cuối trang"><a href="https://www.linkedin.com/in/thongtranngoc/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="#top">Về đầu trang</a></nav>
       </div>
     </div>
   </footer>
