@@ -1,34 +1,4 @@
 (() => {
-  const selector = document.querySelector('.film-selector');
-  const choices = Array.from(selector.querySelectorAll('button'));
-  const panels = choices.map(choice => document.getElementById(choice.getAttribute('aria-controls')));
-
-  function select(id) {
-    choices.forEach((choice, i) => {
-      const selected = panels[i].id === id;
-      panels[i].hidden = !selected;
-      panels[i].classList.toggle('is-selected', selected);
-      choice.setAttribute('aria-pressed', String(selected));
-    });
-  }
-  const initial = panels.find(panel => panel.id === history.state?.selectedProject) || panels[0];
-  select(initial.id);
-  selector.hidden = false;
-  choices.forEach((choice, i) => {
-    choice.addEventListener('click', () => {
-      select(panels[i].id);
-      history.replaceState({ ...history.state, selectedProject: panels[i].id }, '');
-    });
-    choice.addEventListener('keydown', event => {
-      const offset = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
-      if (!offset) return;
-      event.preventDefault();
-      const next = choices[(i + offset + choices.length) % choices.length];
-      next.focus();
-      next.click();
-    });
-  });
-
   const dialog = document.querySelector('.preview-dialog');
   const video = dialog.querySelector('video');
   const trigger = document.querySelector('.watch-preview');
