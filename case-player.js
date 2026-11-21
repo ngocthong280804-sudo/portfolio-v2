@@ -10,23 +10,27 @@ if (screening && typeof screening.showModal === "function") {
     const post = new URL(link.href);
     const tiktok = post.hostname === "www.tiktok.com" && post.pathname.match(/^\/@[^/]+\/video\/(\d+)\/?$/);
     const facebook = post.hostname === "www.facebook.com" && /^\/reel\/\d+\/?$/.test(post.pathname);
-    if (!tiktok && !facebook) continue;
+    const localVideo = post.origin === location.origin && post.protocol === location.protocol && /\.mp4$/i.test(post.pathname);
+    if (!tiktok && !facebook && !localVideo) continue;
 
     const provider = tiktok ? "TikTok" : "Facebook";
+    const sourceLabel = localVideo ? "Mở video riêng" : "Mở trên " + provider;
     const title = link.querySelector("strong").textContent;
-    const item = document.createElement("div");
-    item.className = "screening-item";
+    if (!localVideo) {
+      const item = document.createElement("div");
+      item.className = "screening-item";
 
-    const source = document.createElement("a");
-    source.className = "screening-source";
-    source.href = link.href;
-    source.target = "_blank";
-    source.rel = "noopener noreferrer";
-    source.textContent = "Mở trên " + provider;
-    source.setAttribute("aria-label", source.textContent + " – " + title);
+      const source = document.createElement("a");
+      source.className = "screening-source";
+      source.href = link.href;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = sourceLabel;
+      source.setAttribute("aria-label", sourceLabel + " – " + title);
 
-    link.replaceWith(item);
-    item.append(link, source);
+      link.replaceWith(item);
+      item.append(link, source);
+    }
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", screening.id);
     const caption = link.querySelector(".sample__caption small");
@@ -38,12 +42,26 @@ if (screening && typeof screening.showModal === "function") {
 
       heading.textContent = title;
       originalLink.href = link.href;
-      originalLink.textContent = source.textContent;
-      originalLink.setAttribute("aria-label", source.getAttribute("aria-label"));
+      originalLink.textContent = sourceLabel;
+      originalLink.setAttribute("aria-label", sourceLabel + " – " + title);
       screening.showModal();
       event.preventDefault();
       document.documentElement.classList.add("screening-active");
       opener = link;
+
+      if (localVideo) {
+        const player = document.createElement("video");
+        player.controls = true;
+        player.playsInline = true;
+        player.preload = "metadata";
+        player.setAttribute("aria-label", title);
+        const poster = link.querySelector("img");
+        if (poster) player.poster = poster.currentSrc || poster.src;
+        player.src = post.href;
+        stage.replaceChildren(player);
+        player.play().catch(() => { /* Native controls remain available for manual playback. */ });
+        return;
+      }
 
       const frame = document.createElement("iframe");
       frame.title = title + " – " + provider;
@@ -69,6 +87,12 @@ if (screening && typeof screening.showModal === "function") {
 
   screening.addEventListener("close", () => {
     if (screening.open) return;
+    const player = stage.querySelector("video");
+    if (player) {
+      player.pause();
+      player.removeAttribute("src");
+      player.load();
+    }
     stage.replaceChildren();
     document.documentElement.classList.remove("screening-active");
     opener?.focus({preventScroll: true});

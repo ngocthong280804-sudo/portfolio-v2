@@ -1,0 +1,68 @@
+.cut--ddv, .ddv-hero {
+  color: #f6f4f1;
+  background: #191818;
+}
+.cut--ddv .cut-art { inset: 0 0 0 48%; }
+.ddv-art { display: grid; grid-template-columns: .85fr 1fr; gap: 3px; background: #161616; }
+.ddv-art img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; }
+.ddv-art img:first-child { object-position: 50% 34%; }
+.ddv-art img:last-child { object-position: 48% 36%; }
+.cut--ddv .cut-copy { padding-right: 1rem; }
+.cut--ddv h3 { line-height: 1.03; margin-block: .35rem .75rem; }
+
+.ddv-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+.ddv-hero__copy { padding: clamp(2.5rem, 6vw, 7rem) 6% clamp(2.5rem, 5vw, 6rem) 10%; align-self: center; }
+.ddv-hero .case-meta { color: #d7d2cd; }
+.ddv-hero h1 {
+  margin: .25em 0 .3em;
+  font: 800 clamp(4rem, 8.9vw, 10rem)/1.01 "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  text-transform: uppercase; letter-spacing: -.038em;
+}
+.ddv-hero h1 span { display: block; }
+.ddv-hero__copy > p:last-child { max-width: 38ch; font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.6; }
+.ddv-hero .ddv-art { overflow: hidden; min-height: 0; max-height: clamp(26rem, 40vw, 39rem); }
+.ddv-hero .ddv-art img { max-height: inherit; }
+.ddv-jump { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); margin-block: 1.4rem clamp(1.8rem,4vw,4rem); }
+.ddv-jump a {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .1rem .8rem;
+  min-height: 5rem; padding: .8rem clamp(.7rem, 2.5vw, 2rem);
+  border: 1px solid #54524f;
+}
+.ddv-jump a + a { border-left: 0; }
+.ddv-jump a::after { content: "↓"; grid-column: 2; grid-row: 1/3; font-size: 1.25rem; }
+.ddv-jump span { font-weight: 600; font-size: clamp(1rem, 2vw, 1.5rem); }
+.ddv-jump small { grid-column: 1; grid-row: 2; color: #c9c5c0; }
+.ddv-jump a:hover, .ddv-jump a:focus-visible { background: #2c2928; }
+.ddv .project-samples { padding-block: clamp(2rem, 3.4vw, 3.5rem) clamp(2.2rem, 4.2vw, 4.6rem); }
+.ddv-section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: 1.4rem; margin-bottom: 1.7rem; }
+.ddv .project-samples h2 { margin: 0; }
+.ddv-section-head p { max-width: 48ch; color: #d1cec9; line-height: 1.55; }
+.ddv .sample-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.7rem, 1.5vw, 1.65rem); }
+.ddv .sample-grid .sample { display: block; }
+.ddv .sample__still { display: block; aspect-ratio: 9/16; }
+.ddv .sample__still img { aspect-ratio: auto; }
+.ddv .sample__caption { display: block; margin: .7rem 0 0; }
+.ddv .sample__series { display: block; margin-bottom: .18rem; color: #c5c0bc; font-size: .8rem; }
+.ddv .sample__caption strong { display: block; font-size: clamp(.96rem,1.5vw,1.45rem); line-height: 1.3; }
+.ddv .sample__length { position: absolute; top: .5rem; right: .5rem; color: #fff; background: #0d0d0dde; padding: .07rem .4rem; font-size: .75rem; font-variant-numeric: tabular-nums; border-radius: .2rem; }
+.ddv details { margin-top: clamp(1.3rem, 2.3vw, 2.4rem); }
+.ddv summary { width: fit-content; min-height: 44px; padding: .45rem 0; font-size: .92rem; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: .32em; }
+.ddv summary:hover { color: #fff; }
+.ddv details[open] summary { margin-bottom: 1.15rem; }
+.ddv details:not([open]) .ddv-less, .ddv details[open] .ddv-more { display: none; }
+.ddv .screening-stage video { display: block; width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 48rem) {
+  .ddv .sample-grid { grid-template-columns: repeat(2,minmax(0,1fr)); row-gap: 1.45rem; }
+  .ddv .sample-grid .screening-item { display: block; }
+}
+@media (max-width: 42rem) {
+  .cut--ddv .cut-art { inset: auto; }
+  .ddv-hero { display: flex; flex-direction: column-reverse; }
+  .ddv-hero .ddv-art { width: 100%; height: clamp(12.5rem, 60vw, 23rem); }
+  .ddv-hero__copy { align-self: stretch; padding: 1.65rem 5% 1.8rem; }
+  .ddv-hero h1 { font-size: clamp(3.05rem, 12.7vw, 5.1rem); margin: .15em 0 .18em; }
+  .ddv-hero h1 span { display: inline; }
+  .ddv-section-head { grid-template-columns: 1fr; gap: .65rem; margin-bottom: 1.1rem; }
+  .ddv .play-mark { right: .4rem; bottom: .4rem; width: 2rem; }
+  .ddv-jump { margin-top: 1rem; }
+}
