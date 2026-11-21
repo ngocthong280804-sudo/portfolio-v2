@@ -1,0 +1,32 @@
+@font-face {
+  font-family:"Bricolage Grotesque";
+  src:url("assets/fonts/bricolage-variable.ttf") format("truetype");
+  font-style:normal;
+  font-weight:200 800;
+  font-stretch:75% 100%;
+  font-display:swap;
+}
+:root { --studio-display:"Bricolage Grotesque","Be Vietnam Pro",sans-serif; --sans:var(--studio-display); --serif:var(--studio-display); }
+body,.casebook { font-family:var(--studio-display);font-optical-sizing:auto; }
+.casebook { --case-serif:var(--studio-display);--case-display:var(--studio-display); }
+body em {font-style:normal;}
+.intro .intro__name {font-family:var(--studio-display);font-weight:780;letter-spacing:-.04em;line-height:1.02;}
+.intro .intro__name em {font-style:normal;font-weight:460;margin:0;letter-spacing:-.04em;}
+@media(min-width:49rem){.intro .intro__name {font-size:clamp(5rem,9.5vw,12rem);left:4%;}.intro .intro__name em {margin-left:.22em;}}
+.casebook .case-signature {font:760 1.55rem/1.25 var(--studio-display);letter-spacing:-.032em;}
+.casebook h1 em,.casebook .next-link strong {font-style:normal;line-height:1.04;}
+.casebook .ddv-hero,.casebook .lab-hero,.casebook .didi-hero {background:#101112;color:#f7f7f5;}
+.casebook .ddv-titleline p,.casebook .didi-intent,.casebook .lab-diptych a {color:#d9d9d7;}
+.casebook .ddv-titleline h1,.casebook .didi-opening h1 {white-space:normal;letter-spacing:-.035em;}
+.casebook .lab-heading h1 {font-size:clamp(3.7rem,7vw,9rem);}
+.casebook .lab-heading h1 em {margin:0;}
+.craft .craft__title,.bio .artist-heading h2 {display:block;letter-spacing:-.035em;}
+.craft .craft__title em,.artist-heading em {font:inherit;margin:0;letter-spacing:inherit;}
+.craft .craft__title em {display:inline;}
+.craft__roles summary {font-weight:550;}
+.bio {background:#e3e5e3;color:#101112;}
+.bio .artist-grid {grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-areas:'portrait heading' 'portrait copy';}
+.bio .artist-credits {color:#171717;}
+.bio .artist-credits div,.bio .artist-credits dt,.bio .artist-credits dd span {color:#303231;border-color:#999;}
+.bio .artist-credits strong {font-family:var(--studio-display);font-style:normal;color:#131513;}
+@media(max-width:48rem){.bio .artist-grid {display:flex;flex-direction:column;}.bio .artist-portrait img {max-height:75svh;}.bio .artist-heading h2 em {display:inline;}}
