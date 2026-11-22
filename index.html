@@ -15,14 +15,14 @@
   <title>Ngọc Thông</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="style.css?v=viaoda1">
+  <link rel="stylesheet" href="style.css?v=viaoda2">
   <link rel="preload" href="assets/fonts/viaoda-name.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="screening.css?v=profile2">
   <link rel="stylesheet" href="toolkit.css?v=studio1">
   <link rel="stylesheet" href="studio-type.css?v=viaoda1">
   <script defer src="screening.js?v=profile2"></script>
-  <script defer src="intro.js?v=2"></script>
+  <script defer src="intro.js?v=handoff1"></script>
 </head>
 <body>
   <a class="skip-work" href="#gioi-thieu">Đến giới thiệu</a>
@@ -32,7 +32,7 @@
         <canvas class="intro__ambience" width="384" height="216" aria-hidden="true"></canvas>
         <div class="intro__screen">
           <img class="intro__end" alt="" src="assets/intro-last-frame.webp" data-last-frame hidden>
-          <video width="720" height="1280" preload="metadata" poster="assets/intro-poster.webp" muted playsinline controls disablepictureinpicture aria-label="Phim mở đầu">
+          <video width="720" height="1280" preload="metadata" poster="assets/intro-poster.webp" muted playsinline disablepictureinpicture aria-label="Phim mở đầu">
             <source src="assets/intro-ngoc-thong.mp4" type="video/mp4">
             Trình duyệt không hỗ trợ phát video.
           </video>
@@ -41,11 +41,6 @@
         <div class="intro__signature" aria-live="polite">
           <h1 class="intro__name" aria-label="Ngọc Thông" data-name hidden><span aria-hidden="true"><i style="--i:0">N</i><i style="--i:1">g</i><i style="--i:2">ọ</i><i style="--i:3">c</i></span> <span aria-hidden="true"><i style="--i:4">T</i><i style="--i:5">h</i><i style="--i:6">ô</i><i style="--i:7">n</i><i style="--i:8">g</i></span></h1>
         </div>
-        <figcaption class="intro__controls" data-controls hidden>
-          <button type="button" data-play>Phát intro</button>
-          <progress value="0" max="1" aria-label="Tiến trình phát intro"></progress>
-          <button type="button" data-sound>Bật tiếng</button>
-        </figcaption>
         <p class="intro__error" data-video-error hidden>Video chưa tải được. Hãy thử tải lại trang.</p>
       </figure>
       <a class="intro-work" href="#gioi-thieu" aria-label="Đến giới thiệu"><span aria-hidden="true"></span></a>
@@ -65,7 +60,7 @@
       </div>
     </header>
 
-    <section class="bio personal" id="gioi-thieu" aria-labelledby="about-title">
+    <section class="bio personal" id="gioi-thieu" aria-labelledby="about-title" tabindex="-1">
       <div class="wrap personal-grid">
         <header>
           <p class="artist-label">Giới thiệu</p>

@@ -2,11 +2,9 @@ const intro = document.querySelector('[data-intro]');
 const video = intro.querySelector('video');
 const name = intro.querySelector('[data-name]');
 const lastFrame = intro.querySelector('[data-last-frame]');
-const controls = intro.querySelector('[data-controls]');
-const playButton = intro.querySelector('[data-play]');
 const playOverlay = intro.querySelector('[data-play-overlay]');
-const soundButton = intro.querySelector('[data-sound]');
-const progress = intro.querySelector('progress');
+const profile = document.getElementById('gioi-thieu');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const errorMessage = intro.querySelector('[data-video-error]');
 const ambience = intro.querySelector('canvas');
 const backdrop = ambience.getContext('2d');
@@ -55,72 +53,61 @@ function sizeBackdrop() {
   paintBackdrop();
 }
 
-function updateControls() {
-  playButton.textContent = video.ended ? 'Phát lại' : video.paused ? 'Phát intro' : 'Tạm dừng';
+function updatePlayOverlay() {
   playOverlay.hidden = !video.paused || video.ended || !errorMessage.hidden;
-  soundButton.textContent = video.muted ? 'Bật tiếng' : 'Tắt tiếng';
-}
-
-function updateProgress() {
-  progress.value = Number.isFinite(video.duration) ? video.currentTime / video.duration : 0;
 }
 
 async function playIntro() {
-  if (video.ended) {
-    name.hidden = true;
-    lastFrame.hidden = true;
-    intro.classList.remove('intro--complete');
-    video.currentTime = 0;
-  }
-
   try {
     await video.play();
   } catch {
-    updateControls();
+    updatePlayOverlay();
   }
 }
 
 function showVideoError() {
   errorMessage.hidden = false;
-  controls.hidden = true;
   playOverlay.hidden = true;
 }
 
-video.controls = false;
-controls.hidden = false;
 video.addEventListener('play', () => {
-  updateControls();
+  updatePlayOverlay();
   startBackdrop();
 });
-video.addEventListener('pause', updateControls);
-video.addEventListener('volumechange', updateControls);
+video.addEventListener('pause', updatePlayOverlay);
 video.addEventListener('loadeddata', sizeBackdrop);
 video.addEventListener('timeupdate', () => {
-  updateProgress();
   if (!hasVideoFrameCallback) paintBackdrop();
 });
 window.addEventListener('resize', sizeBackdrop);
 video.addEventListener('error', showVideoError);
 video.querySelector('source').addEventListener('error', showVideoError);
-video.addEventListener('ended', () => {
+video.addEventListener('ended', async () => {
   paintBackdrop();
   lastFrame.hidden = !lastFrame.complete || lastFrame.naturalWidth === 0;
   name.hidden = false;
   intro.classList.add('intro--complete');
-  updateControls();
-  updateProgress();
+  updatePlayOverlay();
+
+  if (window.scrollY > 2 || (location.hash && location.hash !== '#top')) return;
+  const navigation = new AbortController();
+  const cancel = () => navigation.abort();
+  const options = { once: true, passive: true, signal: navigation.signal };
+  for (const event of ['scroll', 'hashchange', 'pagehide']) window.addEventListener(event, cancel, options);
+  document.addEventListener('visibilitychange', cancel, options);
+  try {
+    await Promise.allSettled(name.getAnimations({ subtree: true }).map(animation => animation.finished));
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    if (navigation.signal.aborted || document.hidden || window.scrollY > 2 || !video.ended) return;
+    profile.focus({ preventScroll: true });
+    profile.scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth', block: 'start' });
+  } finally {
+    navigation.abort();
+  }
 });
 
-playButton.addEventListener('click', () => {
-  if (video.paused) playIntro();
-  else video.pause();
-});
 playOverlay.addEventListener('click', playIntro);
-soundButton.addEventListener('click', () => {
-  video.muted = !video.muted;
-});
-
-updateControls();
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !location.hash) {
+updatePlayOverlay();
+if (!reducedMotion.matches && !location.hash) {
   playIntro();
 }
