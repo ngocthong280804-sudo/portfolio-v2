@@ -51,7 +51,9 @@ h1, h2, h3, p, figure { margin: 0; }
   }
 }
 
-.intro__overlay { position: absolute; inset: 50% auto auto 50%; z-index: 3; transform: translate(-50%, -50%); background: var(--white); color: var(--black); border: 0; border-radius: 100px; padding: .65rem 1.15rem; white-space: nowrap; font-size: .85rem; font-weight: 700; cursor: pointer; }
+.intro__sound { position:absolute; right:4%; bottom:max(1.25rem,env(safe-area-inset-bottom)); z-index:3; display:grid; place-items:center; width:44px; height:44px; border:1px solid #ffffff70; border-radius:50%; background:#10101080; color:white; cursor:pointer; }
+.intro__sound [data-icon] { display:none; }
+.intro__sound[data-state="play"] [data-icon="play"], .intro__sound[data-state="muted"] [data-icon="muted"], .intro__sound[data-state="sound"] [data-icon="sound"] { display:inline; }
 .intro__error { position: absolute; z-index: 3; inset: auto 1rem 1rem; width: fit-content; margin-inline: auto; color: var(--dim); background: var(--black); padding: .5rem .85rem; }
 
 @media (max-width: 48rem) {

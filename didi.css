@@ -3,6 +3,8 @@
 .didi-hero { padding-block: clamp(1.7rem,4.4vw,4.8rem) var(--case-gutter); background: #f7f7f2; }
 .didi-opening { display: grid; grid-template-columns: 1.25fr .75fr; align-items: end; gap: .4rem 2rem; margin-bottom: clamp(1.4rem,3.3vw,3.5rem); }
 .didi-opening .case-meta { grid-column: 1/-1; }
+.didi-social {grid-column:1/-1;display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1rem;}
+.didi-social a {padding-block:.45rem;font-weight:600;text-decoration:underline;text-underline-offset:.25em;}
 .didi-opening h1 { margin: 0; font: 800 clamp(4.7rem,10vw,12rem)/1.04 var(--case-display); letter-spacing: -.035em; white-space: nowrap; }
 .didi-opening h1 em { font-size: 1.08em; }
 .didi-intent { justify-self: end; max-width: 31ch; padding-bottom: .55rem; color: #41413b; font-size: clamp(1rem,1.15vw,1.15rem); line-height: 1.6; }

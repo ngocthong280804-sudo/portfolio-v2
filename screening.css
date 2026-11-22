@@ -51,6 +51,10 @@ body { background:#101112; }
 .outro-head h2 {font-size:clamp(4rem,11vw,12rem);letter-spacing:-.04em;line-height:1;}
 .outro-mail {display:grid;justify-items:start;}
 .outro-mail a {font-size:clamp(1rem,1.8vw,2rem);text-decoration:underline;text-underline-offset:.2em;}
+.contact-channels {width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:.9rem 1.5rem;margin:1rem 0 0;}
+.contact-channels dt {font-size:.8rem;color:#aaa;}
+.contact-channels dd {margin:.1rem 0 0;}
+.contact-channels dd a {font-size:1rem;}
 .copy-status,.outro-mail button {color:#aaa;font-size:.85rem;}
 .outro-foot {border-top:1px solid #444;}
 @media(max-width:48rem){

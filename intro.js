@@ -2,7 +2,7 @@ const intro = document.querySelector('[data-intro]');
 const video = intro.querySelector('video');
 const name = intro.querySelector('[data-name]');
 const lastFrame = intro.querySelector('[data-last-frame]');
-const playOverlay = intro.querySelector('[data-play-overlay]');
+const control = intro.querySelector('[data-intro-control]');
 const profile = document.getElementById('gioi-thieu');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const errorMessage = intro.querySelector('[data-video-error]');
@@ -53,28 +53,38 @@ function sizeBackdrop() {
   paintBackdrop();
 }
 
-function updatePlayOverlay() {
-  playOverlay.hidden = !video.paused || video.ended || !errorMessage.hidden;
+function updateControl() {
+  control.hidden = video.ended || !errorMessage.hidden;
+  const state = video.paused ? 'play' : video.muted ? 'muted' : 'sound';
+  control.dataset.state = state;
+  const label = { play: 'Phát video', muted: 'Bật âm thanh', sound: 'Tắt âm thanh' }[state];
+  control.setAttribute('aria-label', label);
+  control.title = label;
 }
 
 async function playIntro() {
   try {
     await video.play();
-  } catch {
-    updatePlayOverlay();
+  } catch (error) {
+    if (error.name === 'NotAllowedError' && !video.muted) {
+      video.muted = true;
+      try { await video.play(); } catch { /* Manual playback is available in the corner. */ }
+    }
+    updateControl();
   }
 }
 
 function showVideoError() {
   errorMessage.hidden = false;
-  playOverlay.hidden = true;
+  control.hidden = true;
 }
 
 video.addEventListener('play', () => {
-  updatePlayOverlay();
+  updateControl();
   startBackdrop();
 });
-video.addEventListener('pause', updatePlayOverlay);
+video.addEventListener('pause', updateControl);
+video.addEventListener('volumechange', updateControl);
 video.addEventListener('loadeddata', sizeBackdrop);
 video.addEventListener('timeupdate', () => {
   if (!hasVideoFrameCallback) paintBackdrop();
@@ -87,7 +97,7 @@ video.addEventListener('ended', async () => {
   lastFrame.hidden = !lastFrame.complete || lastFrame.naturalWidth === 0;
   name.hidden = false;
   intro.classList.add('intro--complete');
-  updatePlayOverlay();
+  updateControl();
 
   if (window.scrollY > 2 || (location.hash && location.hash !== '#top')) return;
   const navigation = new AbortController();
@@ -106,8 +116,16 @@ video.addEventListener('ended', async () => {
   }
 });
 
-playOverlay.addEventListener('click', playIntro);
-updatePlayOverlay();
-if (!reducedMotion.matches && !location.hash) {
+control.addEventListener('click', () => {
+  if (video.paused) {
+    video.muted = false;
+    playIntro();
+  } else {
+    video.muted = !video.muted;
+  }
+});
+if (!reducedMotion.matches && (!location.hash || location.hash === '#top')) {
   playIntro();
+} else {
+  updateControl();
 }
