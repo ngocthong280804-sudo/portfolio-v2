@@ -14,15 +14,16 @@ if (screening && typeof screening.showModal === "function") {
     if (!tiktok && !facebook && !localVideo) continue;
 
     const provider = tiktok ? "TikTok" : "Facebook";
-    const sourceLabel = localVideo ? "Mở video riêng" : "Mở trên " + provider;
+    const sourceHref = link.dataset.original || link.href;
+    const sourceLabel = link.dataset.original ? "Bài gốc trên TikTok" : localVideo ? "Mở video riêng" : "Mở trên " + provider;
     const title = link.querySelector("strong").textContent;
-    if (!localVideo) {
+    if (!localVideo || link.dataset.original) {
       const item = document.createElement("div");
       item.className = "screening-item";
 
       const source = document.createElement("a");
       source.className = "screening-source";
-      source.href = link.href;
+      source.href = sourceHref;
       source.target = "_blank";
       source.rel = "noopener noreferrer";
       source.textContent = sourceLabel;
@@ -41,7 +42,7 @@ if (screening && typeof screening.showModal === "function") {
           event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
       heading.textContent = title;
-      originalLink.href = link.href;
+      originalLink.href = sourceHref;
       originalLink.textContent = sourceLabel;
       originalLink.setAttribute("aria-label", sourceLabel + " – " + title);
       screening.showModal();

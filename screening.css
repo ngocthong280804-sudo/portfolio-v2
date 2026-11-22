@@ -40,6 +40,8 @@ body { background:#101112; }
 .film-selector button {display:flex;align-items:center;gap:clamp(.6rem,1.1vw,1.2rem);text-align:left;padding:.8rem 0;min-width:0;border:0;border-top:2px solid #494b4d;background:none;color:#aaa;cursor:pointer;font-weight:590;font-size:clamp(.9rem,1.35vw,1.45rem);letter-spacing:-.035em;}
 .film-selector button[aria-pressed=true],.film-selector button:hover {color:white;border-color:currentColor;}
 .film-selector img {width:clamp(42px,4.9vw,80px);height:clamp(37px,3.7vw,60px);object-fit:cover;}
+.film-selector .project-mark {object-fit:contain;background:#fff;padding:3px;}
+.feature--didi .feature-links {flex-wrap:wrap;}
 @media(prefers-reduced-motion:no-preference){.feature.is-selected .feature-art {animation:cut-in .36s ease-out;} @keyframes cut-in {from{opacity:.32;transform:scale(1.025);}to{opacity:1;transform:none;}}}
 .preview-dialog {position:fixed;border:0;background:#101112;color:white;padding:.75rem;max-width:min(88rem,94vw);width:max-content;margin:auto;}
 .preview-dialog::backdrop {background:#000d;}

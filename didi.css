@@ -19,6 +19,8 @@
 .didi-section h2 { font: 600 clamp(2.6rem,5.7vw,6rem)/1.12 var(--case-serif); letter-spacing: -.035em; margin: 0 0 clamp(1.4rem,2.5vw,2.7rem); }
 .didi-identity { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2.27fr); gap: clamp(.65rem,1.3vw,1.4rem); }
 .didi-case figure img { display:block; width: 100%; height: auto; }
+.didi-films {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1.5rem;max-width:48rem;}
+.didi-films video {display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#141414;}
 .didi-case figcaption { border-top: 1px solid var(--didi-rule); margin-top: .6rem; padding-top: .45rem; color: #4b4b46; font: 500 .9rem/1.5 var(--sans); }
 .didi-channels { display:grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap:7%; align-items:center; }
 .didi-channels dl { max-width: 29rem; margin: 0; }
