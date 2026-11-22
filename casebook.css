@@ -71,6 +71,8 @@
 .casebook .sample:hover .play-mark, .casebook .sample:focus-visible .play-mark { background: #fafaf4; color: #141412; }
 .casebook .sample__caption { display: block; margin: .68rem 0 0; }
 .casebook .sample__caption strong { font: 500 clamp(.99rem,1.6vw,1.5rem)/1.45 var(--sans); letter-spacing: -.015em; }
+.casebook .lab-video { display: block; width: 100%; aspect-ratio: 9/16; object-fit: contain; background: #0b0b0b; }
+.casebook--creator .sample__caption small { display: block; }
 .casebook .reel-list a[data-screening] { padding-block: 1.15rem; min-height: 5.7rem; display: grid; grid-template-columns: 2.75rem minmax(0,1.05fr) minmax(0,.75fr); align-items: center; justify-content: start; gap: clamp(.6rem,1.6vw,1.75rem); }
 .casebook .reel-list a[data-screening]::before { content: "▶"; place-items: center; display: grid; width: 2.65rem; aspect-ratio: 1; border-radius: 50%; border: 1px solid #999a94; color: white; font: .7rem/1 Arial,sans-serif; }
 .casebook .reel-list a[data-screening]:hover::before { background: #fafaf5; color: #111; }

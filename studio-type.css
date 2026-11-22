@@ -11,15 +11,26 @@ body,.casebook { font-family:var(--studio-display);font-optical-sizing:auto; }
 .casebook { --case-serif:var(--studio-display);--case-display:var(--studio-display); }
 body em {font-style:normal;}
 @font-face {
-  font-family:"Viaoda Libre";font-style:normal;font-weight:400;font-display:swap;
-  src:url("assets/fonts/viaoda-name.woff2") format("woff2");
+  font-family: "Fraunces Title";
+  font-style: italic;
+  font-weight: 680;
+  font-display: swap;
+  src: url("assets/fonts/fraunces-title-italic.woff2") format("woff2");
 }
 .intro .intro__name {
-  font:400 clamp(2.8rem,15vw,7rem)/1.18 "Viaoda Libre",Georgia,serif;
-  letter-spacing:0;word-spacing:.025em;white-space:nowrap;color:#fffcf5;
+  font: italic 680 clamp(3.1rem, 16vw, 7rem)/1.04 "Fraunces Title", Georgia, serif;
+  letter-spacing: -.035em;
+  white-space: nowrap;
+  color: #fffcf5;
+}
+.intro .intro__name > span + span {
+  margin-inline-start: .22em;
 }
 @media(min-width:48.01rem) {
-  .intro .intro__name {left:4.7%;font-size:clamp(3.8rem,8.4vw,11rem);}
+  .intro .intro__name {
+    left: 6%;
+    font-size: clamp(3.8rem, 10.5vw, 13rem);
+  }
 }
 .casebook .case-signature {font:760 1.55rem/1.25 var(--studio-display);letter-spacing:-.032em;}
 .casebook h1 em,.casebook .next-link strong {font-style:normal;line-height:1.04;}
