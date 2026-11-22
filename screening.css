@@ -94,9 +94,6 @@ body { background:#101112; }
 .experience dd {margin:.3rem 0 0;line-height:1.5;}
 .experience dd ul {margin:.65rem 0 0;padding-inline-start:1.15rem;font-size:.96rem;}
 .experience dd li + li {margin-top:.45rem;}
-.project-unicamp {width:min(92%,100rem);margin:1.5rem auto 0;border-top:1px solid #494b4d;padding-top:.7rem;}
-.project-unicamp summary {width:fit-content;cursor:pointer;font-weight:600;}
-.project-unicamp p {max-width:65ch;margin-top:.5rem;}
 .skill-group h3 {margin:0 0 .7rem;font-size:1rem;font-weight:600;}
 .instruments .craft__tools {margin-top:0;border-top:0;padding-block:clamp(2.5rem,5vw,5rem);}
 .personal,.experience,.instruments,.outro {scroll-margin-top:4rem;}
