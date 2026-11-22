@@ -10,9 +10,17 @@
 body,.casebook { font-family:var(--studio-display);font-optical-sizing:auto; }
 .casebook { --case-serif:var(--studio-display);--case-display:var(--studio-display); }
 body em {font-style:normal;}
-.intro .intro__name {font-family:var(--studio-display);font-weight:780;letter-spacing:-.04em;line-height:1.02;}
-.intro .intro__name em {font-style:normal;font-weight:460;margin:0;letter-spacing:-.04em;}
-@media(min-width:49rem){.intro .intro__name {font-size:clamp(5rem,9.5vw,12rem);left:4%;}.intro .intro__name em {margin-left:.22em;}}
+@font-face {
+  font-family:"Newsreader Signature";font-style:normal;font-weight:450;font-display:swap;
+  src:url("assets/fonts/newsreader-name-roman.woff2") format("woff2");
+}
+@font-face {
+  font-family:"Newsreader Signature";font-style:italic;font-weight:400;font-display:swap;
+  src:url("assets/fonts/newsreader-name-italic.woff2") format("woff2");
+}
+.intro .intro__name {font-family:"Newsreader Signature",Georgia,serif;font-weight:450;letter-spacing:-.035em;line-height:1.06;color:#fffcf5;}
+.intro .intro__name em {font-style:italic;font-weight:400;margin:0;}
+@media(min-width:49rem){.intro .intro__name {font-size:clamp(5rem,10vw,12rem);left:5%;}.intro .intro__name em {margin:.01em 0 0 .38em;}}
 .casebook .case-signature {font:760 1.55rem/1.25 var(--studio-display);letter-spacing:-.032em;}
 .casebook h1 em,.casebook .next-link strong {font-style:normal;line-height:1.04;}
 .casebook .ddv-hero,.casebook .lab-hero,.casebook .didi-hero {background:#101112;color:#f7f7f5;}
