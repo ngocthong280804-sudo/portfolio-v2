@@ -37,7 +37,7 @@ h1, h2, h3, p, figure { margin: 0; }
 .intro__signature { position: absolute; z-index: 2; inset: 0; pointer-events: none; }
 .intro--complete .intro__signature { background: linear-gradient(90deg, #080808a6, #08080840 37%, transparent 64%); }
 .intro__name { position: absolute; left: clamp(1.5rem, 6vw, 7rem); top: 50%; transform: translateY(-50%); color: #faf9f7; font: 600 clamp(5rem, 12.1vw, 13rem)/.8 var(--serif); letter-spacing: -.07em; text-shadow: 0 .04em .2em #0007; }
-.intro__name > span, .intro__name > em { display:block; white-space:nowrap; }
+.intro__name > span { display:inline-block; }
 .intro__name i { display:inline-block; font-style:inherit; }
 @media (prefers-reduced-motion:no-preference) {
   .intro--complete .intro__name i {
@@ -70,8 +70,6 @@ h1, h2, h3, p, figure { margin: 0; }
   .intro__media::before { background: linear-gradient(180deg, #08080899, transparent 12%, transparent 83%, #080808c0); }
   .intro--complete .intro__signature { background: linear-gradient(0deg, #080808d9, #08080860 26%, transparent 48%); }
   .intro__name { top: auto; bottom: clamp(4.4rem, 16svh, 10rem); left: 5.5%; transform: none; font-size: clamp(3.1rem, 16vw, 8rem); white-space: nowrap; }
-  .intro__name > span, .intro__name > em { display: inline-block; }
-  .intro__name em { margin: 0 0 0 .05em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
